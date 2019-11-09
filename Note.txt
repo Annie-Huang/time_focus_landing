@@ -3,3 +3,6 @@ https://codepen.io/bradtraversy/pen/XLrQvz
 
 https://github.com/Annie-Huang/time_focus_landing
 
+
+https://fonts.google.com/?query=quicksa&selection.family=Quicksand
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
