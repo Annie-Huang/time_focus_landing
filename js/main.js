@@ -63,6 +63,22 @@ function getName() {
     }
 }
 
+// Set Name
+function setName(e) {
+    if (e.type === 'keypress') {
+        // Make sure enter is pressed
+        //if (e.which === 13 || e.keyCode === 13) { // keyCode is deprecated.
+        if (e.which === 13 || e.key === 'Enter') {
+            localStorage.setItem('name', e.target.innerText);
+            // When enter is clicked, we want it to move out the field, rather than go to the next line like the normal enter key will do.
+            name.blur();
+        }
+    } else {
+        localStorage.setItem('name', e.target.innerText);
+    }
+}
+
+
 // Get Focus
 function getFocus() {
     if (localStorage.getItem('focus') === null) {
@@ -71,6 +87,9 @@ function getFocus() {
         focus.textContent = localStorage.getItem('focus');
     }
 }
+
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
 
 // Run
 showTime();
