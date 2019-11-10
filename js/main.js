@@ -6,6 +6,8 @@ const time = document.getElementById('time'),
 
 // Show Time
 function showTime() {
+    // Set to night time to test.
+    // let today = new Date(2019, 06,10, 20,33, 30),
     let today = new Date(),
         hour = today.getHours(),
         min = today.getMinutes(),
@@ -34,6 +36,8 @@ function addZero(n) {
 
 // Set Background and Greeting
 function setBgGreet() {
+    // Set to night time to test.
+    // let today = new Date(2019, 06,10, 20,33, 30),
     let today = new Date(),
         hour = today.getHours(); // 0 - 23
 
