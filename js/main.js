@@ -4,6 +4,9 @@ const time = document.getElementById('time'),
     name = document.getElementById('name'),
     focus = document.getElementById('focus');
 
+// Options
+const showAmPm = true;
+
 // Show Time
 function showTime() {
     // Set to night time to test.
@@ -11,7 +14,7 @@ function showTime() {
     let today = new Date(),
         hour = today.getHours(),
         min = today.getMinutes(),
-        second = today.getSeconds();
+        sec = today.getSeconds();
 
     // Set AM or PM
     const amPm = hour >= 12 ? 'PM' : "AM";
@@ -22,7 +25,7 @@ function showTime() {
 
     // Output Time
     // time.innerHTML = `${hour}<span>:</span>${min}<span>:</span>${second}`;
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(second)}`;
+    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${showAmPm ? amPm : ''}`;
 
     setTimeout(showTime, 1000);
 }
