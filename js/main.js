@@ -88,8 +88,26 @@ function getFocus() {
     }
 }
 
+// Set Focus
+function setFocus(e) {
+    if (e.type === 'keypress') {
+        // Make sure enter is pressed
+        //if (e.which === 13 || e.keyCode === 13) { // keyCode is deprecated.
+        if (e.which === 13 || e.key === 'Enter') {
+            localStorage.setItem('focus', e.target.innerText);
+            // When enter is clicked, we want it to move out the field, rather than go to the next line like the normal enter key will do.
+            focus.blur();
+        }
+    } else {
+        localStorage.setItem('focus', e.target.innerText);
+    }
+}
+
+
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
 
 // Run
 showTime();
